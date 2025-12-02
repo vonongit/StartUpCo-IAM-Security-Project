@@ -549,6 +549,10 @@ resource "aws_sns_topic_subscription" "email" {
 - All public access blocked
 - Bucket policy allowing only CloudTrail service to write logs
 
+```hcl
+depends_on = [aws_s3_bucket_policy.cloudtrail] # forces code to use bucket policy before creating cloudtrail, had issue where it attempted the opposite and failed
+```
+
 - SNS Alerts - Sets up email notifications for security alerts
 
 
