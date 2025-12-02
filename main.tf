@@ -16,11 +16,13 @@ data "aws_caller_identity" "current" {}
 
 # CloudTrail for audit logging
 resource "aws_cloudtrail" "main" {
-  name                       = "startupco-audit-trail"
-  s3_bucket_name             = aws_s3_bucket.cloudtrail.id
+  name                          = "startupco-audit-trail"
+  s3_bucket_name                = aws_s3_bucket.cloudtrail.id
   include_global_service_events = true
-  is_multi_region_trail      = true
-  enable_log_file_validation = true
+  is_multi_region_trail         = true
+  enable_log_file_validation    = true
+
+  depends_on = [aws_s3_bucket_policy.cloudtrail]
 }
 
 # S3 bucket for logs
