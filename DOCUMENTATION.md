@@ -442,7 +442,7 @@ Created a spreadsheet to track testing:
 
 **This was a success**
 
-![mfa-registration-ops1](screenshots/MFA-registration-ops1.png)
+![mfa-registration-ops1](screenshots/mfa-registration-ops1.png)
 
 ## Ops-1 Actions Test:
 
